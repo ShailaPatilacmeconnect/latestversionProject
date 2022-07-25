@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0">{{title}} Business Type</h5>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form (ngSubmit)="typeSubmit()" [formGroup]="typeValidationForm">
+
+                        <div class="form-group">
+                            <label>Business type Name</label>
+                            <input type="text" class="form-control" formControlName="businesstype_name"
+                                [ngClass]="{'is-invalid': typesubmit && f.businesstype_name.errors}" />
+                            <div *ngIf="typesubmit && f.businesstype_name.errors" class="invalid-feedback">
+                                <span *ngIf="f.businesstype_name.errors.required"> Business type Name is required.</span>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group mb-0 mt-3">
+                            <div>
+                                <button type="submit" class="btn btn-primary me-3">
+                                    Save
+                                </button>
+
+                                <button type="reset" class="btn btn-secondary float-end">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

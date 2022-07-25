@@ -6,7 +6,8 @@ import Swal from 'sweetalert2';
 import { AuthfakeauthenticationService } from 'src/app/core/services/authfake.service';
 import { notificationService } from 'src/app/core/services/notofication.service';
 import { NgbdSortableHeader } from '../table-sortable';
-import { AddamenitiesComponent } from './addamenities/addamenities.component';
+import { AddbusinesstypeComponent } from './addbusinesstype.component';
+
 
 
 export type SortDirection = 'asc' | 'desc' | '';
@@ -17,11 +18,11 @@ column: string|null;
 direction: SortDirection;
 }
 @Component({
-  selector: 'app-amenities',
-  templateUrl: './amenities.component.html',
-  styleUrls: ['./amenities.component.scss']
+  selector: 'app-businesstype',
+  templateUrl: './businesstype.component.html',
+  styleUrls: ['./businesstype.component.scss']
 })
-export class AmenitiesComponent implements OnInit {
+export class BusinesstypeComponent implements OnInit {
   page = { totalElements: 0, pageNumber: 1, size: 10 };
   sortBy = "";
   order = "";
@@ -30,9 +31,6 @@ export class AmenitiesComponent implements OnInit {
   typeValidationForm: FormGroup; // type validation form
   typesubmit: boolean = false;
   dataList: any = [];
-  familyCodeData = [];
-  applicationCode = [];
-
   hrefLink: any;
   blob: Blob;
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader> =
@@ -49,24 +47,15 @@ export class AmenitiesComponent implements OnInit {
   ngOnInit() {
     this.breadCrumbItems = [
       { label: "My Dashboard", href: "/dashboard" },
-      { label: "Fresha Amenities", active: true },
+      { label: "Fresha Business Type", active: true },
     ];
     this.initForm();
     this._fetchData();
-
-
   }
   initForm() {
     this.typeValidationForm = this.formBuilder.group({
       id: 0,
-      name: [
-        "",
-        [
-          Validators.required,
-          Validators.maxLength(50),
-          Validators.minLength(2),
-        ],
-      ],
+      name: ["",[Validators.required,Validators.maxLength(50),Validators.minLength(2),],],
     });
   }
   onSort({ column, direction }: SortEvent) {
@@ -91,14 +80,9 @@ export class AmenitiesComponent implements OnInit {
     this._fetchData();
   }
 
-
   public _fetchData() {
     let url =
-      "admin/fresha_amenities?page=" +
-      this.page.pageNumber +
-      "&perPage=" +
-      this.page.size +
-      "&keyword=" +
+      "admin/fresha_businesstypes?page=" +this.page.pageNumber +"&perPage=" +this.page.size +"&keyword=" +
       this.keyword;
     if (this.sortBy != "" && this.order != "") {
       url += "&sortBy=" + this.sortBy + "&order=" + this.order;
@@ -113,9 +97,8 @@ export class AmenitiesComponent implements OnInit {
   get f() {
     return this.typeValidationForm.controls;
   }
- 
   open() {
-    let modalRef = this.modalService.open(AddamenitiesComponent, {
+    let modalRef = this.modalService.open(AddbusinesstypeComponent, {
       size: "lg",
       windowClass: "modal-holder",
       centered: true,
@@ -125,9 +108,8 @@ export class AmenitiesComponent implements OnInit {
       this._fetchData();
     });
   }
-  
   edit(data) {
-    let modalRef = this.modalService.open(AddamenitiesComponent, {
+    let modalRef = this.modalService.open(AddbusinesstypeComponent, {
       size: "lg",
       windowClass: "modal-holder",
       centered: true,
@@ -158,7 +140,7 @@ export class AmenitiesComponent implements OnInit {
       if (result.value) {
         this.authFackservice
           .put(
-            "admin/statusfresha_amenities?value=" +
+            "admin/statusfresha_businesstypes?value=" +
               currentTarget +
               "&id=" +
               id,
@@ -169,13 +151,13 @@ export class AmenitiesComponent implements OnInit {
               if (currentTarget == 0)
                 Swal.fire(
                   "Enabled!",
-                  "Selected Amenities has been enaled.",
+                  "Selected Business Type has been enaled.",
                   "success"
                 );
               else
                 Swal.fire(
                   "Disabled!",
-                  "Selected Amenities has been disabled.",
+                  "Selected Business Type has been disabled.",
                   "success"
                 );
               this._fetchData();
@@ -196,12 +178,12 @@ export class AmenitiesComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.authFackservice
-          .delete("admin/deletefresha_amenities?id=" + item.id)
+          .delete("admin/deletefresha_businesstypes?id=" + item.id)
           .subscribe((res) => {
             if (res["status"] == true) {
               Swal.fire(
                 "Deleted!",
-                "Selected Amenities has been deleted.",
+                "Selected Business Type has been deleted.",
                 "success"
               );
               this._fetchData();
@@ -226,5 +208,4 @@ export class AmenitiesComponent implements OnInit {
     this.page.pageNumber = event;
     this._fetchData();
   }
-
 }

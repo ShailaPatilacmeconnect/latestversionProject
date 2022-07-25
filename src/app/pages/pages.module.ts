@@ -22,6 +22,8 @@ import { NgbdSortableHeader } from './table-sortable';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AmenitiesComponent } from './amenities/amenities.component';
 import { AddamenitiesComponent } from './amenities/addamenities/addamenities.component';
+import { BusinesstypeComponent } from './businesstype/businesstype.component';
+import { AddbusinesstypeComponent } from './businesstype/addbusinesstype.component';
 
 // import { UserComponent } from './user/user.component';
 // import { userGroupComponent } from './settings/userGroup/userGroup.component';
@@ -46,7 +48,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   //   permissionsComponent,apiComponent,
     NgbdSortableHeader,
   AmenitiesComponent,
-  AddamenitiesComponent],
+  AddamenitiesComponent,
+  BusinesstypeComponent,
+  AddbusinesstypeComponent
+],
   imports: [
     CommonModule,
     FormsModule,

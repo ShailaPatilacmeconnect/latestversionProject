@@ -20,12 +20,12 @@ export const MENU: MenuItem[] = [
         link: '/amenities',
 
     },
-    // {
-    //     id: 2,
-    //     label: 'Users',
-    //     icon: 'bx bx-user',
-    //     link: '/users',
-    // },
+    {
+        id: 2,
+        label: 'Business Type',
+        icon: 'bx bx-user',
+        link: '/businesstype',
+    },
     // {
     //     id: 2,
     //     label: 'Checkers',

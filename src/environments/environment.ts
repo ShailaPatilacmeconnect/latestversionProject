@@ -5,7 +5,6 @@
 export const environment = {
   baseurl: "https://bankfab.marshal-me.com/freshaApp/",
 
-
   production: false,
   defaultauth: 'fackbackend',
   firebaseConfig: {
