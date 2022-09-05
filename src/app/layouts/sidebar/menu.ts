@@ -62,11 +62,11 @@ export const MENU: MenuItem[] = [
     //     icon: 'bx bx-code-alt',
     //     link: '/api',
     // },
-    {
-        id: 9,
-        label: 'System Settings',
-        icon: 'bx bx-cog',
-        link: '/settings',
+    // {
+    //     id: 9,
+    //     label: 'System Settings',
+    //     icon: 'bx bx-cog',
+    //     link: '/settings',
 
         // subItems: [
         //     {
@@ -82,7 +82,7 @@ export const MENU: MenuItem[] = [
         //         parentId: 9
         //     },
         // ]
-    },
+    // },
  
 ];
 
