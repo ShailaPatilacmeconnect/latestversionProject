@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseurl:"  baseurl: "https://bankfab.marshal-me.com/freshaApp/",
+  baseurl:"https://bankfab.marshal-me.com/freshaApp/",
   defaultauth: 'fackbackend',
   firebaseConfig: {
     apiKey: '',
