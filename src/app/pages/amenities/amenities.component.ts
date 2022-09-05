@@ -49,7 +49,7 @@ export class AmenitiesComponent implements OnInit {
   ngOnInit() {
     this.breadCrumbItems = [
       { label: "My Dashboard", href: "/dashboard" },
-      { label: "Fresha Amenities", active: true },
+      { label: "Amenities", active: true },
     ];
     this.initForm();
     this._fetchData();

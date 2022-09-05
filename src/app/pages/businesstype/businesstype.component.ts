@@ -47,7 +47,7 @@ export class BusinesstypeComponent implements OnInit {
   ngOnInit() {
     this.breadCrumbItems = [
       { label: "My Dashboard", href: "/dashboard" },
-      { label: "Fresha Business Type", active: true },
+      { label: "Business Type", active: true },
     ];
     this.initForm();
     this._fetchData();
