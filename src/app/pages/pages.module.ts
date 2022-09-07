@@ -24,6 +24,8 @@ import { AmenitiesComponent } from './amenities/amenities.component';
 import { AddamenitiesComponent } from './amenities/addamenities/addamenities.component';
 import { BusinesstypeComponent } from './businesstype/businesstype.component';
 import { AddbusinesstypeComponent } from './businesstype/addbusinesstype.component';
+import { MerchantListComponent } from './merchant-list/merchant-list.component';
+import { MerchantDetailsComponent } from './merchant-list/merchant-details.component';
 
 // import { UserComponent } from './user/user.component';
 // import { userGroupComponent } from './settings/userGroup/userGroup.component';
@@ -50,7 +52,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   AmenitiesComponent,
   AddamenitiesComponent,
   BusinesstypeComponent,
-  AddbusinesstypeComponent
+  AddbusinesstypeComponent,
+  MerchantListComponent,
+  MerchantDetailsComponent
 ],
   imports: [
     CommonModule,

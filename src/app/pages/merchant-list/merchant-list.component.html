@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+    <app-page-title title="Merchant List" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+  
+              <div class="col-md-4 mb-2">
+                <div class="form-group">
+                  <label>Search</label>
+                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="keyword"
+                    (keyup)="search()" />
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive" *ngIf="dataList.length>0">
+              <table class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+                <thead>
+                  <tr>
+                    <th sortable="brand_name" (sort)="onSort($event)">Merchant Name</th>
+                    <th sortable="status" class="text-center" (sort)="onSort($event)">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of dataList ">
+                    <td role="button" routerLink="{{data.id}}">{{data.amenity_name}}</td>
+                    <td class="text-center">
+                      <div class="text-center form-check form-switch  mb-2">
+                        <input type="checkbox" class="form-check-input float-none" id="customSwitch1" (change)="toggleFunction($event,data.id)"
+                          [checked]="!data.status" [id]="data.id">
+                        <label class="custom-control-label" [for]="data.id"></label>
+                      </div>
+                    </td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <app-pagination [page]="pageCopy()" *ngIf="dataList.length>0" (newItemEvent)="changePage($event)">
+            </app-pagination>
+            <div class="table-responsive text-primary" *ngIf="dataList.length==0">
+              * 0 Results Found.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>

@@ -26,12 +26,12 @@ export const MENU: MenuItem[] = [
         icon: 'bx bx-user',
         link: '/businesstype',
     },
-    // {
-    //     id: 2,
-    //     label: 'Checkers',
-    //     icon: 'bx bx-user-check',
-    //     link: '/checkers',
-    // },
+    {
+        id: 3,
+        label: 'Merchant',
+        icon: 'bx bx-user-check',
+        link: '/merchant-list',
+    },
     // {
     //     id: 2,
     //     label: 'Merchants',
