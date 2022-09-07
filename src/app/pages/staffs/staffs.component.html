@@ -1,0 +1,98 @@
+<div class="container-fluid">
+
+    <app-page-title title="Merchants" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 mb-2">
+                 <div class="form-group">
+                   <label>Search</label>
+                   <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="keyword" (keyup)="search()"/>
+                 </div>
+               </div>
+               <!-- <div class="col-md-8">
+                 <div class="form-group col-md-12">
+                   <label style="visibility: hidden;">report</label>
+                   <div>
+                   <div class="text-sm-right">
+                     <button type="button" class="btn btn-primary mb-2 mr-2"  (click)="largeModal(largeDataModal)">
+                       <i class="mdi mdi-plus mr-1"></i> New Staff
+                     </button>
+                   </div>
+                 </div>
+                 </div>
+               </div> -->
+             </div>
+            
+            <div class="table-responsive" *ngIf="merchantsData.length>0">
+              <table class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+                <thead>
+                  <tr>
+                    <th sortable="name" (sort)="onSort($event)">Business Name</th>
+                    <th sortable="business_type" (sort)="onSort($event)">Business Type</th>
+                    <!-- <th sortable="contact_name" (sort)="onSort($event)">Contact Name</th> -->
+                    <th sortable="email" (sort)="onSort($event)">Email</th>
+                    <!-- <th sortable="mobile" (sort)="onSort($event)">Telephone No.</th> -->
+                    <th sortable="status" (sort)="onSort($event)"  class="text-center">Action</th>
+                    <th sortable="status" (sort)="onSort($event)"  class="text-center">Status</th>
+                    <th class="text-center">Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let merchants of merchantsData ">
+                    <td role="button" routerLink="{{merchants.id}}">{{merchants.name}}</td>
+                    <td role="button" routerLink="{{merchants.id}}">{{merchants.businesstype_name}}</td>
+                    <!-- <td role="button" routerLink="{{merchants.id}}">{{merchants.contact_name}}</td> -->
+                    <td role="button" routerLink="{{merchants.id}}">{{merchants.email}}</td>
+                    <!-- <td role="button" routerLink="{{merchants.id}}">{{merchants.telephone}}</td> -->
+                    <td class="text-center">
+                      <div class="text-center form-check form-switch  mb-2">
+                        <input type="checkbox" class="form-check-input float-none" id="customSwitch1" (change)="toggleFunction($event,merchants.id)"
+                          [checked]="!merchants.user_status" [id]="merchants.id">
+                        <label class="custom-control-label" [for]="merchants.id"></label>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <span  href="javascript:;"class="badge bg-primary font-size-12 mr-2" *ngIf="merchants.user_status==2">
+                        Pending
+                      </span>
+                     <span  href="javascript:;"class="badge bg-danger font-size-12 mr-2" *ngIf="merchants.user_status==3">
+                      Rejected
+                    </span>
+                    <span  href="javascript:;"class="badge bg-secondary font-size-12 mr-2" *ngIf="merchants.user_status==1">
+                      Disabled
+                    </span>
+                    <span  href="javascript:;"class="badge bg-success font-size-12" *ngIf="merchants.user_status==0">
+                      Approved
+                    </span></td>
+                   
+                    <td  class="text-center">
+                      <div placement="bottom-right">
+                        <a href="javascript: void(0);"  routerLink="edit/{{merchants.id}}"><i
+                          class="fas fa-pencil-alt text-success mr-2"></i>
+                        </a>
+                        <!-- <a href="javascript: void(0);"  (click)="deleteRow(merchants)"><i
+                          class="fas fa-trash-alt text-danger " ></i>
+                        </a> -->
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        
+            <app-pagination [page]="pageCopy()" *ngIf="merchantsData.length>0" (newItemEvent)="changePage($event)"></app-pagination>
+            <div class="table-responsive text-primary" *ngIf="merchantsData.length==0">
+              * 0 Results Found.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  
+  

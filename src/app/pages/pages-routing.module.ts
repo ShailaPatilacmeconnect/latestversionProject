@@ -4,17 +4,18 @@ import { AmenitiesComponent } from './amenities/amenities.component';
 import { BusinesstypeComponent } from './businesstype/businesstype.component';
 
 import { DefaultComponent } from './dashboards/default/default.component';
-import { MerchantDetailsComponent } from './merchant-list/merchant-details.component';
-import { MerchantListComponent } from './merchant-list/merchant-list.component';
+import { EditComponent } from './staffs/edit/signup.component';
+import { ViewEmployerDetailsComponent } from './staffs/view/view.component';
+import { StaffsComponent } from './staffs/staffs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DefaultComponent },
   { path: 'amenities', component: AmenitiesComponent },
   { path: 'businesstype', component: BusinesstypeComponent },
-  { path: 'merchant-list', component: MerchantListComponent },
-  { path: 'merchant-list/:id', component: MerchantDetailsComponent },
- 
+  { path:'merchants',component:StaffsComponent},
+  { path:'merchants/edit/:id',component:EditComponent},
+  { path:'merchants/:id',component:ViewEmployerDetailsComponent},
 ];
 
 @NgModule({

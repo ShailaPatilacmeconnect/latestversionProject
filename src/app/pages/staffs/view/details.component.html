@@ -1,0 +1,134 @@
+<div class="container-fluid">
+    <app-page-title title="Merchant Details" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title   mb-3">
+                
+            </div>        
+            <div class="col-md-12">
+              <div class="row">
+                <div class="form-group col-lg-12 mb-3 row">
+                    <label class="col-md-6 lables">Business Name <span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.business_name}}</label>
+                    </div>
+                </div>
+                <div class="form-group col-lg-12 mb-3 row">
+                    <label class="col-md-6 lables">Website<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.Website}}</label>
+                    </div>
+                </div>
+                  <div class="form-group col-lg-12 mb-3 row ">
+                      <label class="col-md-6 lables">Business type <span class="float-right">:</span></label>
+                      <div class="col-md-6">
+                          <label>{{merchantsData.businesstype_name}}</label>
+                      </div>
+                  </div>
+                  
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-12 mb-3  row">
+                    <label class="col-md-6 lables">Time zone<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.timezone}}</label>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-12 mb-3  row">
+                    <label class="col-md-6 lables">Time format<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.time_format}} <span>hours</span></label>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-12 mb-3  row">
+                    <label class="col-md-6 lables">Week start<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label *ngIf="merchantsData.week_start_day_id==1">Sunday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==2">Monday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==3">Tuesday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==4">Wednesday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==5">Thursday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==6">Friday</label>
+                        <label *ngIf="merchantsData.week_start_day_id==7">Saturday</label>
+
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="card-title  border-bottom mb-3"><span class="btn btn-outline-primary btn-rounded mr-3 mb-3 mt-2"> <i class="bx bxs-user-detail"></i> </span>Contact Details</div>         -->
+            <!-- <div class="col-md-12">
+              <div class="row">
+                  <div class="form-group col-lg-6 row ">
+                      <label class="col-md-6 lables">Contact Person Name<span class="float-right">:</span></label>
+                      <div class="col-md-6">
+                          <label>{{merchantsData.contact_name}}</label>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 row">
+                      <label class="col-md-6 lables">Contact Person Title<span class="float-right">:</span></label>
+                      <div class="col-md-6">
+                          <label>{{merchantsData.contact_person_title}}</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6 row ">
+                    <label class="col-md-6 lables">Contact Office Number<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.contact_office_number}}</label>
+                    </div>
+                </div>
+                <div class="form-group col-lg-6 row">
+                    <label class="col-md-6 lables">Contact Person Mobile No.<span class="float-right">:</span></label>
+                    <div class="col-md-6">
+                        <label>{{merchantsData.contact_mobile}}</label>
+                    </div>
+                </div>
+            </div>
+            </div> -->
+            <!-- <div class="card-title  border-bottom mb-3"><span class="btn btn-outline-primary btn-rounded mr-3 mb-3 mt-2"> <i class="mdi mdi-map-marker-question"></i> </span>Location Details</div>         -->
+            <!-- <div class="col-md-12 mb-4">
+                <div class="row">
+                    <div class="form-group col-lg-6 row">
+                        <label class="col-md-6 lables">Address<span class="float-right">:</span></label>
+                        <div class="col-md-6">
+                            <label>{{merchantsData.address}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 row">
+                        <label class="col-md-6 lables">Location<span class="float-right">:</span></label>
+                        <div class="col-md-6">
+                            <label>{{merchantsData.location}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6 row">
+                        <label class="col-md-6 lables">Country<span class="float-right">:</span></label>
+                        <div class="col-md-6">
+                            <label>{{merchantsData.country_name}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 row">
+                        <label class="col-md-6 lables">Emirate<span class="float-right">:</span></label>
+                        <div class="col-md-6">
+                            <label>{{merchantsData.emirate_name}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+          
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <!-- end row -->
+  </div>
+ 

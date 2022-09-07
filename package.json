@@ -41,6 +41,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
     "@types/chartist": "^0.11.0",
+    "@types/googlemaps": "^3.43.3",
     "angular-archwizard": "^7.0.0",
     "apexcharts": "^3.27.1",
     "bootstrap": "^5.1.1",

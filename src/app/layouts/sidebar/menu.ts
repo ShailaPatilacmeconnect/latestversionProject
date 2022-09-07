@@ -28,9 +28,9 @@ export const MENU: MenuItem[] = [
     },
     {
         id: 3,
-        label: 'Merchant',
-        icon: 'bx bx-user-check',
-        link: '/merchant-list',
+        label: 'Merchants',
+        icon: 'bx bx-user-pin',
+        link: '/merchants',
     },
     // {
     //     id: 2,

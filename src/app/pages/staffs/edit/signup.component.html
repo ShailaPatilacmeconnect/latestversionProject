@@ -1,0 +1,93 @@
+<div class="container-fluid">
+
+  <app-page-title title="Merchants" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="p-2">
+        <div class="card">
+          <div class="card-body">
+        <form class="needs-validation" name="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()"
+        novalidate>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Business Name</label>
+          <input type="text" formControlName="business_name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.business_name.errors }" id="business_name"
+            placeholder="Enter Merchant Name" />
+
+          <div *ngIf="submitted && f.business_name.errors" class="invalid-feedback">
+            <div *ngIf="f.business_name.errors.required">Business Name is required</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Website</label>
+          <input type="text" formControlName="Website" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.Website.errors }" id="Website"
+            placeholder="Enter Website" />
+          <div *ngIf="submitted && f.Website.errors" class="invalid-feedback">
+            <div *ngIf="f.Website.errors.required"> Website is required</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="business_type_id" class="form-label">Business type</label>
+          <ng-select [items]="dataList" formControlName="business_type_id" bindLabel="businesstype_name" bindValue="id" [ngClass]="{'is-invalid': submitted && f.business_type_id.errors}"></ng-select>
+          
+          <div *ngIf="submitted && f.business_type_id.errors" class="invalid-feedback">
+            <div *ngIf="f.business_type_id.errors.required">Business type is required</div>
+          </div>
+        </div>
+        <div class="mb-3">
+            <label>Time zone</label>
+            <select class="form-select" formControlName="time_zone" bindLabel="time_zone" bindValue="id"
+                [ngClass]="{'is-invalid': submitted && f.time_zone.errors}">
+                <option *ngFor="let time of timeZone" value="{{time.id}}">(GMT  {{time.gmt_offset}} :00) {{time.timezone}}</option>
+            </select>
+            <div *ngIf="submitted && f.time_zone.errors" class="invalid-feedback">
+        
+                <span
+                    *ngIf="f.time_zone.errors.minLength || f.time_zone.errors.maxLength || f.time_zone.errors.pattern">Time Zone is invalid.</span>
+            </div>
+          </div>
+            
+            <div class=" mb-3">
+              <label>Time format</label>
+              <select class="form-select" formControlName="time_format" bindLabel="time_format" bindValue="id"
+                  [ngClass]="{'is-invalid': submitted && f.time_format.errors}">
+                  <option value="12">12 hours (e.g 9PM)</option>
+                  <option value="24">24 hours (e.g 21:00)</option>
+              </select>
+              <div *ngIf="submitted && f.time_format.errors" class="invalid-feedback">
+          
+                  <span
+                      *ngIf="f.time_format.errors.minLength || f.time_format.errors.maxLength || f.time_format.errors.pattern">Time Format is invalid.</span>
+              </div>
+          </div>
+          <div class="form-group mb-3">
+            <label>Week start</label>
+            <select class="form-select" formControlName="week_start_day_id" bindLabel="week_start_day_id" bindValue="id"
+                [ngClass]="{'is-invalid': submitted && f.week_start_day_id.errors}">
+                <option [ngValue]=1>Sunday</option>
+                <option [ngValue]=2>Monday</option>
+                <option [ngValue]=3>Tuesday</option>
+                <option [ngValue]=4>Wednesday</option>
+                <option [ngValue]=5>Thursday</option>
+                <option [ngValue]=6>Friday</option>
+                <option [ngValue]=7>Saturday</option>
+            </select>
+            <div *ngIf="submitted && f.week_start_day_id.errors" class="invalid-feedback">                        
+                <span
+                    *ngIf="f.week_start_day_id.errors.minLength || f.week_start_day_id.errors.maxLength || f.week_start_day_id.errors.pattern">Week Start in Invalid</span>
+            </div>
+        </div>
+          <div class="mt-4 col-md-12">
+            <button class="btn btn-primary" type="submit">Save</button>
+          </div>
+      </form>
+      </div>
+      </div>
+
+      </div>
+  </div> <!-- end col -->
+</div>
+ 
