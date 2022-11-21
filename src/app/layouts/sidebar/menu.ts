@@ -13,25 +13,25 @@ export const MENU: MenuItem[] = [
         link: '/',
 
     },
-    {
-        id: 2,
-        label: 'Amenities',
-        icon: 'bx bx-home-circle',
-        link: '/amenities',
+    // {
+    //     id: 2,
+    //     label: 'Amenities',
+    //     icon: 'bx bx-home-circle',
+    //     link: '/amenities',
 
-    },
-    {
-        id: 2,
-        label: 'Business Type',
-        icon: 'bx bx-user',
-        link: '/businesstype',
-    },
-    {
-        id: 3,
-        label: 'Merchants',
-        icon: 'bx bx-user-pin',
-        link: '/merchants',
-    },
+    // },
+    // {
+    //     id: 2,
+    //     label: 'Business Type',
+    //     icon: 'bx bx-user',
+    //     link: '/businesstype',
+    // },
+    // {
+    //     id: 3,
+    //     label: 'Merchants',
+    //     icon: 'bx bx-user-pin',
+    //     link: '/merchants',
+    // },
     // {
     //     id: 2,
     //     label: 'Merchants',

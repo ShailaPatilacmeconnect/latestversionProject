@@ -20,13 +20,13 @@ import { DashboardsModule } from './dashboards/dashboards.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbdSortableHeader } from './table-sortable';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { AmenitiesComponent } from './amenities/amenities.component';
-import { AddamenitiesComponent } from './amenities/addamenities/addamenities.component';
-import { BusinesstypeComponent } from './businesstype/businesstype.component';
-import { AddbusinesstypeComponent } from './businesstype/addbusinesstype.component';
-import { StaffsComponent } from './staffs/staffs.component';
-import { ViewEmployerDetailsComponent } from './staffs/view/view.component';
-import { EditComponent } from './staffs/edit/signup.component';
+// import { AmenitiesComponent } from './amenities/amenities.component';
+// import { AddamenitiesComponent } from './amenities/addamenities/addamenities.component';
+// import { BusinesstypeComponent } from './businesstype/businesstype.component';
+// import { AddbusinesstypeComponent } from './businesstype/addbusinesstype.component';
+// import { StaffsComponent } from './staffs/staffs.component';
+// import { ViewEmployerDetailsComponent } from './staffs/view/view.component';
+// import { EditComponent } from './staffs/edit/signup.component';
 import { AgmCoreModule } from '@agm/core';
 
 // import { UserComponent } from './user/user.component';
@@ -51,13 +51,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   //   merchantComponent,dbUserComponent,databaseComponent,
   //   permissionsComponent,apiComponent,
     NgbdSortableHeader,
-  AmenitiesComponent,
-  AddamenitiesComponent,
-  BusinesstypeComponent,
-  AddbusinesstypeComponent,
-  StaffsComponent,
-  ViewEmployerDetailsComponent,
-  EditComponent
+  // AmenitiesComponent,
+  // AddamenitiesComponent,
+  // BusinesstypeComponent,
+  // AddbusinesstypeComponent,
+  // StaffsComponent,
+  // ViewEmployerDetailsComponent,
+  // EditComponent
 ],
   imports: [
     CommonModule,
